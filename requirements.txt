@@ -2,3 +2,4 @@ Flask~=3.0.2
 flask_SQLAlchemy
 flask-JWT
 psycopg2
+gunicorn
