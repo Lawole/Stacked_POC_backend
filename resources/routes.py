@@ -2,7 +2,6 @@ from flask import jsonify, request
 
 from resources import db, app
 
-from resources.models import Customers
 
 
 # route for handling GET requests

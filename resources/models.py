@@ -1,6 +1,6 @@
 from _datetime import datetime
 
-from resources.__init__ import db
+from resources import db
 
 
 class Customers(db.Model):
@@ -23,7 +23,7 @@ class Webhooks(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     resources = db.Column(db.String(1000), unique=False, nullable=True)
     eventName = db.Column(db.String(250), unique=False, nullable=True)
-    flowID = db.Column(db.Integer(1000), unique=False, nullable=True)
+    flowID = db.Column(db.Integer, unique=False, nullable=True)
     timestamp = db.Column(db.DateTime, nullable=False, default=datetime)
     # Ingredients = db.Column(ARRAY(db.String), nullable=False, unique=False)
 

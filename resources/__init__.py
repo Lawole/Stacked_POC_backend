@@ -54,8 +54,11 @@ def handle_webhook():
                            flowID=flowID,
                            timestamp=timestamp)
 
-    db.session.add(new_webhook)
-    db.session.commit()
+    print(new_webhook.resources)
+    print(new_webhook.eventName)
+    print(new_webhook.flowID)
+    print(new_webhook.timestamp)
+
 
     return {'message': 'Webhooks received'}, 201
 
