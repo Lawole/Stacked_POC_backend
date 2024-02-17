@@ -1,5 +1,6 @@
 Flask~=3.0.2
 flask_SQLAlchemy
 flask-JWT
+flask_migrate
 psycopg2
 gunicorn
