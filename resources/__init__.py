@@ -44,20 +44,36 @@ def register_customer():
 @app.route('/api/webhook', methods=['Post'])
 def handle_webhook():
     payload = request.get_json()
-    resources = payload.get('resources')
-    eventName = payload.get('eventName')
-    flowID = payload.get('flowID')
-    timestamp = payload.get('timestamp')
+    eventType = payload.get('eventType')
+    eventTime = payload.get('eventTime')
+    eventVersion = payload.get('eventVersion')
+    applicationStatus = payload.get('applicationStatus')
+    transactionId = payload.get('transactionId')
+    eventId = payload.get('eventId')
 
-    new_webhook = Webhooks(resources=resources,
-                           eventName=eventName,
-                           flowID=flowID,
-                           timestamp=timestamp)
 
-    print(new_webhook.resources)
-    print(new_webhook.eventName)
-    print(new_webhook.flowID)
-    print(new_webhook.timestamp)
+
+    # resources = payload.get('resources')
+    # eventName = payload.get('eventName')
+    # flowID = payload.get('flowID')
+    # timestamp = payload.get('timestamp')
+
+    print(eventType)
+    print(eventTime)
+    print(eventVersion)
+    print(applicationStatus)
+    print(transactionId)
+    print(eventId)
+
+    # new_webhook = Webhooks(resources=resources,
+    #                        eventName=eventName,
+    #                        flowID=flowID,
+    #                        timestamp=timestamp)
+
+    # print(new_webhook.resources)
+    # print(new_webhook.eventName)
+    # print(new_webhook.flowID)
+    # print(new_webhook.timestamp)
 
 
     return {'message': 'Webhooks received'}, 201
